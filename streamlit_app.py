@@ -19,7 +19,7 @@ if name_on_order:
 cnx = st.connection("snowflake")
 session = cnx.session()
 # Set the active warehouse
-session.sql("USE WAREHOUSE <your_warehouse>").collect()
+session.sql("USE WAREHOUSE COMPUTE_WH").collect()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
